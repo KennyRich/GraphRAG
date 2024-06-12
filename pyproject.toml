@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "pydata2024"
+version = "0.1.0"
+description = ""
+authors = ["Richard <kogunyale01@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.2.1"
+langchain-openai = "^0.1.8"
+langchain-experimental = "^0.0.59"
+python-dotenv = "^1.0.1"
+jupyter = "^1.0.0"
+neo4j = "^5.20.0"
+yfiles-jupyter-graphs = "^1.6.2"
+wikipedia = "^1.4.0"
+jq = "^1.7.0"
+langchainhub = "^0.1.17"
+tqdm = "^4.66.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

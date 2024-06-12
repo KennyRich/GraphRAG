@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:5.19.0-enterprise
+    network_mode: "bridge"
+    restart: always
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
+      - NEO4J_PLUGINS=["apoc", "genai"]
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*,algo.*,genai.*
+      - NEO4J_dbms_security_procedures.allowlist=apoc.*,algo.*,genai.*
+      - NEO4J_server_config_strict__validation_enabled=false
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+    env_file:
+      - .env
+    volumes:
+      - ./volume/plugins:/plugins
+      - ./volume/data:/data
+
+
